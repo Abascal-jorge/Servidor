@@ -7,8 +7,14 @@ const app= express();
 //Conectar a la base de datos
 conectarDB();
 
+//Habilitar express.json
+app.use(express.json({ extended: true }));
+
 //puerto de la app
  const port = process.env.PORT || 4000;
+
+//importar rutas
+app.use("/api/usuarios", require("./routes/usuarios"));
 
  // arrancar la app
  app.listen(port, ()=>{
