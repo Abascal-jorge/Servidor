@@ -43,14 +43,14 @@ exports.crearUsuario= async (req, res) =>{
 
          //Firmar el jwt
          jwt.sign(payload, process.env.SECRETA,{
-            expiresIn: 3600000
+            expiresIn: 3600
          } ,(error, token) => {
             if(error)throw error;
             res.json({token});
          });
 
          //mensaje de confirmacion
-        // res.json({msg: "El usuario se creo con exito"});
+        //res.json({msg: "El usuario se creo con exito"});
 
     } catch (error) {
         console.log(error);
