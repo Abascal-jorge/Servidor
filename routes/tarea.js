@@ -23,4 +23,17 @@ router.get("/",
     tareacontrollers.obtenerTarea
 );
 
+//Actualizando datos tareas
+router.put("/:id",
+    auth,
+    tareacontrollers.actualizarTarea
+);
+
+//Eliminar Tarea 
+
+router.delete("/:id",
+    auth,
+    tareacontrollers.eliminarTarea
+);
+
 module.exports = router;
