@@ -1,13 +1,3 @@
-/*const MongoClient = require ('mongodb'). MongoClient;
-const uri = " mongodb + srv : // root : <contraseña> @ cluster0.u3kfd.mongodb.net / <dbname> ? retryWrites = true & w = mayoría ";
-const client = new MongoClient (uri, {useNewUrlParser: true} );
-client.connect (err => {
-  const collection = client.db ("prueba"). collection ("dispositivos");
-  // realizar acciones en el objeto de colección
-  client.close ();
-} );*/
-
-
 //Connectando mongo db a app nodex express
 const mongoose = require("mongoose");
 require("dotenv").config({path: "variables.env"});
