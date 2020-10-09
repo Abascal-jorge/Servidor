@@ -2,16 +2,20 @@
 const express = require("express");
 const router = express.Router();
 const authcontroller = require("../controllers/authcontrollers");
+const auth = require("../middleware/auth");
 const { check } = require("express-validator");
 
-//Crea validacion de usuario
+//INICIAR SESION
 //api/auth
 router.post("/",  
-   [
-       check("email", "Ingrese un correo valido").isEmail(),
-       check("password", "La contraseña debe tener 6 digitos minimos").isLength({min: 6})
-   ],
    authcontroller.autenticarUsuario
 );
+
+//obtiene el usuario autenticado
+router.get("/",
+   auth,
+   authcontroller.usuarioAutenticado
+);
+
 
 module.exports = router;
